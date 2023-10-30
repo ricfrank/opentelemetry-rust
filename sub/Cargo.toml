@@ -1,0 +1,18 @@
+[package]
+name = "sub"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+services = { path = "../services" }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+tracing-opentelemetry = { workspace = true }
+tracing-bunyan-formatter = { workspace = true }
+actix-web = { workspace = true }
+actix-web-opentelemetry = { workspace = true }
+actix-service = { workspace = true }
+actix-http = { workspace = true }
+

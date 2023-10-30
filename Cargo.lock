@@ -198,6 +198,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "add"
+version = "0.1.0"
+dependencies = [
+ "actix-http",
+ "actix-service",
+ "actix-web",
+ "actix-web-opentelemetry",
+ "services",
+ "tracing",
+ "tracing-bunyan-formatter",
+ "tracing-opentelemetry",
+ "tracing-subscriber",
+]
+
+[[package]]
 name = "addr2line"
 version = "0.21.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1099,27 +1114,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "opentelemetry-rs"
-version = "0.1.0"
-dependencies = [
- "actix-web",
- "actix-web-opentelemetry",
- "anyhow",
- "futures-util",
- "opentelemetry",
- "opentelemetry-jaeger",
- "opentelemetry-prometheus",
- "opentelemetry_api 0.19.0",
- "opentelemetry_sdk",
- "prometheus",
- "tokio",
- "tracing",
- "tracing-bunyan-formatter",
- "tracing-opentelemetry",
- "tracing-subscriber",
-]
-
-[[package]]
 name = "opentelemetry-semantic-conventions"
 version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1511,6 +1505,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "services"
+version = "0.1.0"
+dependencies = [
+ "actix-http",
+ "actix-service",
+ "actix-web",
+ "actix-web-opentelemetry",
+ "anyhow",
+ "futures-util",
+ "opentelemetry",
+ "opentelemetry-jaeger",
+ "opentelemetry-prometheus",
+ "opentelemetry_api 0.19.0",
+ "opentelemetry_sdk",
+ "prometheus",
+ "tokio",
+ "tracing",
+ "tracing-bunyan-formatter",
+ "tracing-opentelemetry",
+ "tracing-subscriber",
+]
+
+[[package]]
 name = "sha1"
 version = "0.10.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1583,6 +1600,21 @@ checksum = "7b5fac59a5cb5dd637972e5fca70daf0523c9067fcdc4842f053dae04a18f8e9"
 dependencies = [
  "libc",
  "windows-sys",
+]
+
+[[package]]
+name = "sub"
+version = "0.1.0"
+dependencies = [
+ "actix-http",
+ "actix-service",
+ "actix-web",
+ "actix-web-opentelemetry",
+ "services",
+ "tracing",
+ "tracing-bunyan-formatter",
+ "tracing-opentelemetry",
+ "tracing-subscriber",
 ]
 
 [[package]]

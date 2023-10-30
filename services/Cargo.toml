@@ -1,0 +1,29 @@
+[package]
+name = "services"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+tracing-opentelemetry = { workspace = true }
+tracing-bunyan-formatter = { workspace = true }
+
+opentelemetry = { version = "0.18.0", features = ["rt-tokio-current-thread","trace"] }
+opentelemetry-jaeger = { version = "0.17.0", features = ["rt-tokio-current-thread", "collector_client", "rt-tokio", "isahc_collector_client"] }
+opentelemetry_sdk = { version = "0.18.0", features = ["metrics", "rt-tokio-current-thread", "trace"] }
+opentelemetry_api = "0.19.0"
+opentelemetry-prometheus = { version = "0.11.0", features = ["prometheus-encoding"] }
+
+actix-web = "4.3.1"
+actix-web-opentelemetry = { version = "0.13.0", features = ["metrics", "prometheus", "metrics-prometheus", "opentelemetry-prometheus"] }
+actix-service = "2.0.2"
+actix-http = "3.4.0"
+
+prometheus = { version = "0.13", features = ["default"] }
+futures-util = "0.3.28"
+tokio = { version = "1", features = ["full"] }
+anyhow = "1.0.75"
+
