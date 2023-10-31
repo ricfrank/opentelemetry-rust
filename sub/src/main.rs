@@ -1,4 +1,5 @@
-use actix_web::{web, App};
+use actix_web::{web, App, Error};
+use services::client::CalculationClient;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -6,12 +7,13 @@ async fn main() -> std::io::Result<()> {
     Ok(())
 }
 
-async fn sub(values: web::Json<Vec<i64>>) -> web::Json<i64> {
-    // telemetry::init_tracer().expect("Failed to initialize telemetry");
+async fn sub(values: web::Json<Vec<i64>>) -> Result<web::Json<i64>, Error> {
     let mut total = values[0];
+    let client = CalculationClient::new();
+
     for v in values.iter().skip(1) {
-        total -= v;
+        total = client.add(total, -v).await?;
     }
 
-    web::Json(total)
+    Ok(web::Json(total))
 }

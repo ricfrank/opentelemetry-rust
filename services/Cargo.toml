@@ -17,13 +17,13 @@ opentelemetry_sdk = { version = "0.18.0", features = ["metrics", "rt-tokio-curre
 opentelemetry_api = "0.19.0"
 opentelemetry-prometheus = { version = "0.11.0", features = ["prometheus-encoding"] }
 
-actix-web = "4.3.1"
-actix-web-opentelemetry = { version = "0.13.0", features = ["metrics", "prometheus", "metrics-prometheus", "opentelemetry-prometheus"] }
-actix-service = "2.0.2"
-actix-http = "3.4.0"
+actix-web = { workspace = true }
+actix-web-opentelemetry = { workspace = true }
+actix-service = { workspace = true }
+actix-http = { workspace = true }
 
 prometheus = { version = "0.13", features = ["default"] }
 futures-util = "0.3.28"
 tokio = { version = "1", features = ["full"] }
-anyhow = "1.0.75"
-
+awc = "3.2.0"
+thiserror = "1.0.30"
