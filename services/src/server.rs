@@ -7,7 +7,7 @@ use actix_web::{
 
 use crate::telemetry;
 
-pub async fn run<T, B>(app_builder: fn() -> App<T>, port: &str) -> std::io::Result<()>
+pub async fn run<T, B>(app_builder: fn() -> App<T>, port: &str, service_name: &str) -> std::io::Result<()>
 where
     // B: 'static + MessageBody<Error = actix_http::Error>,
     B: 'static + MessageBody<Error = std::boxed::Box<(dyn std::error::Error + 'static)>>,

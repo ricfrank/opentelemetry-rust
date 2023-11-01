@@ -3,10 +3,11 @@ use services::client::CalculationClient;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    services::server::run(|| App::new().service(web::resource("/sub").to(sub)), "8081").await?;
+    services::server::run(|| App::new().service(web::resource("/sub").to(sub)), "8081", "sub").await?;
     Ok(())
 }
 
+#[tracing::instrument]
 async fn sub(values: web::Json<Vec<i64>>) -> Result<web::Json<i64>, Error> {
     let mut total = values[0];
     let client = CalculationClient::new();
