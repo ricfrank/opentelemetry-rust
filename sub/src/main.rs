@@ -16,5 +16,7 @@ async fn sub(values: web::Json<Vec<i64>>) -> Result<web::Json<i64>, Error> {
         total = client.add(total, -v).await?;
     }
 
+    tracing::info!("Subtraction result: {}", total);
+
     Ok(web::Json(total))
 }

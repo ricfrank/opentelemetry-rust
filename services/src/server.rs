@@ -20,7 +20,7 @@ where
             InitError = (),
         >,
 {
-    telemetry::init_tracer().expect("Failed to initialize telemetry");
+    telemetry::init_tracer(service_name).expect("Failed to initialize telemetry");
     HttpServer::new(move || app_builder().wrap(actix_web_opentelemetry::RequestTracing::new()))
         .bind(format!("0.0.0.0:{}", port))?
         .run()
