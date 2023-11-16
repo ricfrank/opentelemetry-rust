@@ -16,3 +16,4 @@ Send http requests:
 ## Todo:
  - add instrumentation to code
  - add metrics
+ - make grafana work
