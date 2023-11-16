@@ -1,4 +1,5 @@
-use actix_web::{get, post, web, App, HttpResponse, Responder};
+use actix_web::{get, post, web, App, HttpResponse, Responder, HttpServer};
+use actix_web_prom::PrometheusMetricsBuilder;
 
 #[get("/")]
 #[tracing::instrument]
@@ -13,8 +14,28 @@ async fn echo(req_body: String) -> impl Responder {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    // telemetry::init_tracer().expect("Failed to initialize telemetry");
-    services::server::run(|| App::new().service(web::resource("/add").to(add)), "8080", "add").await?;
+    // let prometheus = PrometheusMetricsBuilder::new("api")
+    //     .endpoint("/metrics")
+    //     .build()
+    //     .unwrap();
+    // HttpServer::new(move || {
+    //     App::new()
+    //         .wrap(prometheus.clone())
+    //         .service(hello)
+    // })
+    // .bind(("127.0.0.1", 4000))?
+    //     .run()
+    //     .await
+    services::server::run(
+        || {
+            App::new()
+                // .wrap(prometheus.clone())
+                .service(web::resource("/add").to(add))
+        },
+        "8080",
+        "add",
+    )
+    .await?;
     Ok(())
 }
 

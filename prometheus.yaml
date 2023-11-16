@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 30s
+scrape_configs:
+- job_name: actix-monitoring
+  honor_labels: true
+  metrics_path: /metrics
+  static_configs:
+  - targets: 
+    - 'prometheus:9090' 
+    # - '172.17.0.1:8080'

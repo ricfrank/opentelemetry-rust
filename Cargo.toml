@@ -17,3 +17,6 @@ actix-web = "4.3.1"
 actix-web-opentelemetry = { version = "0.13.0", features = ["awc", "metrics", "prometheus", "metrics-prometheus", "opentelemetry-prometheus"] }
 actix-service = "2.0.2"
 actix-http = "3.4.0"
+prometheus = "0.13.3"
+actix-web-prom = "0.6.0"
+systemstat = "0.2.3"

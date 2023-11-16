@@ -15,4 +15,5 @@ actix-web = { workspace = true }
 actix-web-opentelemetry = { workspace = true }
 actix-service = { workspace = true }
 actix-http = { workspace = true }
-
+prometheus = { workspace = true }
+actix-web-prom = { workspace = true }

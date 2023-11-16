@@ -21,8 +21,10 @@ actix-web = { workspace = true }
 actix-web-opentelemetry = { workspace = true }
 actix-service = { workspace = true }
 actix-http = { workspace = true }
+prometheus = { workspace = true }
+actix-web-prom = { workspace = true }
 
-prometheus = { version = "0.13", features = ["default"] }
+systemstat = "0.2.3"
 futures-util = "0.3.28"
 tokio = { version = "1", features = ["full"] }
 awc = "3.2.0"
